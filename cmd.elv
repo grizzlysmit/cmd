@@ -3,6 +3,14 @@ use os
 use path
 use builtin
 
+fn dfh {|@args|
+    e:df  --exclude-type=squashfs -h $@args
+}
+
+fn dfH {|@args|
+    e:df  --exclude-type=squashfs -H $@args
+}
+
 fn executable {|path|
     if ?(e:test -x $path) {
         put $true
